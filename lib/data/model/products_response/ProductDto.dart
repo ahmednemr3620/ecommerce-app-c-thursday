@@ -4,26 +4,25 @@ import 'package:ecommerce_app_c10_frida/domain/entities/Product.dart';
 
 import 'SubcategoryDto.dart';
 
-
 class ProductDto {
   ProductDto({
-      this.sold, 
-      this.images, 
-      this.subcategory, 
-      this.ratingsQuantity, 
-      this.id, 
-      this.title, 
-      this.slug, 
-      this.description, 
-      this.quantity, 
-      this.price, 
-      this.imageCover, 
-      this.category, 
-      this.brand, 
-      this.ratingsAverage, 
-      this.createdAt, 
-      this.updatedAt, 
-      });
+    this.sold,
+    this.images,
+    this.subcategory,
+    this.ratingsQuantity,
+    this.id,
+    this.title,
+    this.slug,
+    this.description,
+    this.quantity,
+    this.price,
+    this.imageCover,
+    this.category,
+    this.brand,
+    this.ratingsAverage,
+    this.createdAt,
+    this.updatedAt,
+  });
 
   ProductDto.fromJson(dynamic json) {
     sold = json['sold'];
@@ -42,65 +41,68 @@ class ProductDto {
     quantity = json['quantity'];
     price = json['price'];
     imageCover = json['imageCover'];
-    category = json['category'] != null ? CategoryDto.fromJson(json['category']) : null;
+    category = json['category'] != null
+        ? CategoryDto.fromJson(json['category'])
+        : null;
     brand = json['brand'] != null ? BrandDto.fromJson(json['brand']) : null;
     ratingsAverage = json['ratingsAverage'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     id = json['id'];
   }
-  int? sold;
+  num? sold;
   List<String>? images;
   List<SubcategoryDto>? subcategory;
-  int? ratingsQuantity;
+  num? ratingsQuantity;
   String? id;
   String? title;
   String? slug;
   String? description;
-  int? quantity;
-  int? price;
+  num? quantity;
+  num? price;
   String? imageCover;
   CategoryDto? category;
   BrandDto? brand;
-  double? ratingsAverage;
+  num? ratingsAverage;
   String? createdAt;
   String? updatedAt;
 
-ProductDto copyWith({  int? sold,
-  List<String>? images,
-  List<SubcategoryDto>? subcategory,
-  int? ratingsQuantity,
-  String? id,
-  String? title,
-  String? slug,
-  String? description,
-  int? quantity,
-  int? price,
-  String? imageCover,
-  CategoryDto? category,
-  BrandDto? brand,
-  double? ratingsAverage,
-  String? createdAt,
-  String? updatedAt,
-
-}) => ProductDto(  sold: sold ?? this.sold,
-  images: images ?? this.images,
-  subcategory: subcategory ?? this.subcategory,
-  ratingsQuantity: ratingsQuantity ?? this.ratingsQuantity,
-  id: id ?? this.id,
-  title: title ?? this.title,
-  slug: slug ?? this.slug,
-  description: description ?? this.description,
-  quantity: quantity ?? this.quantity,
-  price: price ?? this.price,
-  imageCover: imageCover ?? this.imageCover,
-  category: category ?? this.category,
-  brand: brand ?? this.brand,
-  ratingsAverage: ratingsAverage ?? this.ratingsAverage,
-  createdAt: createdAt ?? this.createdAt,
-  updatedAt: updatedAt ?? this.updatedAt,
-
-);
+  ProductDto copyWith({
+    num? sold,
+    List<String>? images,
+    List<SubcategoryDto>? subcategory,
+    num? ratingsQuantity,
+    String? id,
+    String? title,
+    String? slug,
+    String? description,
+    num? quantity,
+    num? price,
+    String? imageCover,
+    CategoryDto? category,
+    BrandDto? brand,
+    num? ratingsAverage,
+    String? createdAt,
+    String? updatedAt,
+  }) =>
+      ProductDto(
+        sold: sold ?? this.sold,
+        images: images ?? this.images,
+        subcategory: subcategory ?? this.subcategory,
+        ratingsQuantity: ratingsQuantity ?? this.ratingsQuantity,
+        id: id ?? this.id,
+        title: title ?? this.title,
+        slug: slug ?? this.slug,
+        description: description ?? this.description,
+        quantity: quantity ?? this.quantity,
+        price: price ?? this.price,
+        imageCover: imageCover ?? this.imageCover,
+        category: category ?? this.category,
+        brand: brand ?? this.brand,
+        ratingsAverage: ratingsAverage ?? this.ratingsAverage,
+        createdAt: createdAt ?? this.createdAt,
+        updatedAt: updatedAt ?? this.updatedAt,
+      );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['sold'] = sold;
@@ -128,7 +130,8 @@ ProductDto copyWith({  int? sold,
     map['id'] = id;
     return map;
   }
-  Product toProduct(){
+
+  Product toProduct() {
     return Product(
       slug: slug,
       id: id,
@@ -146,5 +149,4 @@ ProductDto copyWith({  int? sold,
       subcategory: subcategory?.map((e) => e.toSubCategory()).toList(),
     );
   }
-
 }

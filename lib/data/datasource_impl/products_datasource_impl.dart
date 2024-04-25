@@ -10,8 +10,8 @@ class ProductsDataSourceImpl extends ProductDataSource{
   @factoryMethod
   ProductsDataSourceImpl({required this.apiManager});
   @override
-  Future<List<Product>?> getProducts({ProductSort? sort})async {
-    var response = await apiManager.getProducts();
+  Future<List<Product>?> getProducts({ProductSort? sort,String? categoryId})async {
+    var response = await apiManager.getProducts(categoryId:categoryId??"");
     return response.data?.map((productDto) => productDto.toProduct()).toList();
   }
 }

@@ -8,8 +8,8 @@ class ProductsRepositoryImpl extends ProductRepository{
  @factoryMethod
   ProductsRepositoryImpl({required this.productDataSource});
   @override
-  Future<List<Product>?> getProducts({ProductSort? sortBy}) {
-    return productDataSource.getProducts();
+  Future<List<Product>?> getProducts({ProductSort? sortBy,String? categoryId}) {
+    return productDataSource.getProducts(categoryId:categoryId??"");
   }
 
 }

@@ -3,7 +3,7 @@ import 'package:ecommerce_app_c10_frida/presentation/ui/home/tabs/home_tab/home_
 import 'package:ecommerce_app_c10_frida/presentation/ui/home/tabs/home_tab/home_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main(){
   configureDependencies();
   runApp(MyApp());
@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget{
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+        navigatorKey:navigatorKey ,
         home: HomeScreen(),
       ),
     );

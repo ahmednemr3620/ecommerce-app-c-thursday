@@ -42,34 +42,34 @@ class Product {
     brand = json['brand'] != null ? Brand.fromJson(json['brand']) : null;
     ratingsAverage = json['ratingsAverage'];
   }
-  int? sold;
+  num? sold;
   List<String>? images;
   List<Subcategory>? subcategory;
-  int? ratingsQuantity;
+  num? ratingsQuantity;
   String? id;
   String? title;
   String? slug;
   String? description;
-  int? quantity;
-  int? price;
+  num? quantity;
+  num? price;
   String? imageCover;
   Category? category;
   Brand? brand;
-  double? ratingsAverage;
-Product copyWith({  int? sold,
+  num? ratingsAverage;
+Product copyWith({  num? sold,
   List<String>? images,
   List<Subcategory>? subcategory,
-  int? ratingsQuantity,
+  num? ratingsQuantity,
   String? id,
   String? title,
   String? slug,
   String? description,
-  int? quantity,
-  int? price,
+  num? quantity,
+  num? price,
   String? imageCover,
   Category? category,
   Brand? brand,
-  double? ratingsAverage,
+  num? ratingsAverage,
 }) => Product(  sold: sold ?? this.sold,
   images: images ?? this.images,
   subcategory: subcategory ?? this.subcategory,

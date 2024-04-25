@@ -19,7 +19,7 @@ class ProductsResponse {
       });
     }
   }
-  int? results;
+  num? results;
   PaginationDto? metadata;
   List<ProductDto>? data;
 ProductsResponse copyWith({  int? results,
